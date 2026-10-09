@@ -14,11 +14,12 @@ public class movement : MonoBehaviour
     public LayerMask whatIsGround;
     private bool grounded;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+  private Animator anim; //instance of Animator object to control the character's animation in code
 
-    }
+    	void Start () {
+            anim = GetComponent<Animator>();//The player now has an Animator component attached to it, and the animation will play accordingly 
+        //when the character moves
+       }
 
     // Update is called once per frame
     void Update()
@@ -47,6 +48,10 @@ public class movement : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumph);
         }
+
+        anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
+        anim.SetFloat("Height", GetComponent<Rigidbody2D>().velocity.y);
+        anim.SetBool("Grounded", grounded);
     }
 
     void FixedUpdate()
