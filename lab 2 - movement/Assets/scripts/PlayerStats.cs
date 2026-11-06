@@ -4,26 +4,27 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int health = 3;
-	public int lives = 3;
+    public static int health = 3;
+	public static int lives = 3;
+	public  static int score = 0;
+	public static bool hasHeart = false;
 
-    /*private float flickerTime = 0f; //counteer
+    private float flickerTime = 0f; //counteer
     public float flickerDuration = 0.1f;
 
 	private SpriteRenderer sr;
 
 	public bool isImmune = false;
     private float immunityTime = 0f; //counter
-    public float immunityDuration = 1.5f;*/
-    //private SpriteRenderer sr;
+    public float immunityDuration = 1.5f; 
     void Start()
     {
-       // sr = GetComponent<SpriteRenderer>();
+       sr = GetComponent<SpriteRenderer>();
     }
 
 	void Update()
 	{
-		/*if(isImmune == true)
+		if(isImmune == true)
 		{
 			SpriteFlicker();
 			immunityTime = immunityTime + Time.deltaTime; //starting the counter for immunity
@@ -32,10 +33,10 @@ public class PlayerStats : MonoBehaviour
 				isImmune = false;
 				sr.enabled = true;
 			}
-		}*/
+		}
 	}
 
-	/*public void TakeDamage(int damage)
+	public void TakeDamage(int damage)
 	{
 		if (isImmune == false )
 		{
@@ -60,10 +61,10 @@ public class PlayerStats : MonoBehaviour
 		
 		isImmune = true;
 		immunityTime = 0f;
-	}*/
+	}
 
 
-	public void TakeDamage(int damage)
+	/*public void TakeDamage2(int damage)
 {
 	Debug.Log("I GOT HIT BY AN ENEMY :(");
     health = health - damage;
@@ -87,9 +88,9 @@ public class PlayerStats : MonoBehaviour
  
     Debug.Log("Player Health:" + health.ToString());
     Debug.Log("Player Lives:" + lives.ToString());
-}
+}*/
 	
-	/*void SpriteFlicker()
+	void SpriteFlicker()
 	{
 		if(flickerTime < flickerDuration)
 		{
@@ -100,6 +101,6 @@ public class PlayerStats : MonoBehaviour
             sr.enabled = !(sr.enabled);
 		    flickerTime = 0;
 		}
-	}*/
+	}
 
 }

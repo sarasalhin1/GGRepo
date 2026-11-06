@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class collectable : MonoBehaviour
 {
-public AudioSource sfxSource; 
+//public AudioSource sfxSource; 
+
 public AudioClip coinSound;
+
  void Start()
     {
 
@@ -24,9 +26,10 @@ public AudioClip coinSound;
             Debug.Log("Score: " + PlayerStats.score);
             Destroy(gameObject);
         }
+
         // this part is for testing the level individually and in the absence of the audio manager
         // instance fro the reviod level
-        else if (other.tag == "Player" && AudioManager.Instance==null)
+        /*else if (other.tag == "Player" && AudioManager.Instance==null)
         {
             PlayerStats.score++;
             Debug.Log("I AM IN The Else in OF COLLECTABLE MANUEL MUSIC");
@@ -34,6 +37,6 @@ public AudioClip coinSound;
             sfxSource.Play();
             Debug.Log("Score: " + PlayerStats.score);
             Destroy(gameObject,0.3f);
-        }
+        }*/
     }
 }
